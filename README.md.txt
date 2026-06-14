@@ -1,5 +1,7 @@
 Auto Ticket Categorization Webhook
 
+🎥 Video link : https://drive.google.com/file/d/1bJw2kbHAaiYCyywTFbBgrixkIFNnKRj4/view?usp=drivesdk
+
 Architecture Overview
 
 The project is built using FastAPI. The API receives support tickets, analyzes the ticket text, and automatically assigns a category based on predefined keywords. The categorized result is then returned as a JSON response.
