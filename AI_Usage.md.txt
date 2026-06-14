@@ -1,0 +1,34 @@
+AI Usage Note :
+
+AI Tool Used  -  ChatGPT
+
+Purpose of AI Usage
+
+AI was used as a development assistant during the implementation of the Auto Ticket Categorization Webhook project.
+
+Areas Where AI Helped
+
+- Generating FastAPI boilerplate code
+- Designing API endpoints
+- Creating sample ticket data
+- Preparing project documentation (README)
+- Assisting with testing and debugging
+- Providing implementation guidance
+
+Key Prompts Used
+
+1. Create a FastAPI webhook for ticket categorization.
+2. Generate sample support tickets with categories.
+3. Explain FastAPI project structure.
+4. Create README documentation for the project.
+5. Provide API testing examples.
+
+Challenges and Corrections
+
+- Some generated code required minor syntax adjustments.
+- Certain implementation details were modified to match project requirements.
+- Manual testing was performed to verify the final output.
+
+Learning Outcome
+
+Using AI accelerated development, improved documentation quality, and helped in understanding FastAPI concepts and API development workflows.
