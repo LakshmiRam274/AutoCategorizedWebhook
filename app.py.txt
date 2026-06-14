@@ -1,0 +1,81 @@
+import json
+import os
+import google.generativeai as genai
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.responses import JSONResponse
+
+app = FastAPI(title="AutoCategorizedWebhook", version="1.0.0")
+
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+model = genai.GenerativeModel("gemini-2.0-flash")
+
+TICKETS_FILE = "tickets.json"
+CATEGORIES = ["Bug","Feature Request","Billing","Account","Performance","Security","Documentation","Other"]
+
+def load_tickets():
+    if not os.path.exists(TICKETS_FILE):
+        return []
+    with open(TICKETS_FILE,"r") as f:
+        try: return json.load(f)
+        except: return []
+
+def save_tickets(tickets):
+    with open(TICKETS_FILE,"w") as f:
+        json.dump(tickets,f,indent=2)
+
+def auto_categorize(title,description):
+    prompt=f"""You are a support ticket categorization system.
+Ticket Title: {title}
+Ticket Description: {description}
+Categorize using ONLY one of: {", ".join(CATEGORIES)}
+Priority: Low, Medium, High, or Critical
+One-line summary (max 15 words).
+Respond ONLY in JSON format, no extra text:
+{{"category":"<category>","priority":"<priority>","summary":"<summary>"}}"""
+    response = model.generate_content(prompt)
+    raw = response.text.strip().replace("```json","").replace("```","").strip()
+    return json.loads(raw)
+
+@app.get("/")
+def root():
+    return {"message":"AutoCategorizedWebhook is running!"}
+
+@app.post("/webhook/ticket")
+async def receive_ticket(request:Request):
+    try: body=await request.json()
+    except: raise HTTPException(status_code=400,detail="Invalid JSON")
+    title=body.get("title","").strip()
+    description=body.get("description","").strip()
+    if not title or not description:
+        raise HTTPException(status_code=422,detail="title and description required")
+    try: ai_result=auto_categorize(title,description)
+    except Exception as e: raise HTTPException(status_code=500,detail=f"AI failed: {str(e)}")
+    tickets=load_tickets()
+    ticket_id=body.get("id") or f"TKT-{len(tickets)+1:04d}"
+    ticket={"id":ticket_id,"title":title,"description":description,"source":body.get("source","webhook"),"category":ai_result["category"],"priority":ai_result["priority"],"summary":ai_result["summary"],"status":"Open"}
+    tickets.append(ticket)
+    save_tickets(tickets)
+    return JSONResponse(status_code=201,content={"message":"Ticket categorized!","ticket":ticket})
+
+@app.get("/tickets")
+def get_all_tickets(category:str=None,priority:str=None):
+    tickets=load_tickets()
+    if category: tickets=[t for t in tickets if t.get("category","").lower()==category.lower()]
+    if priority: tickets=[t for t in tickets if t.get("priority","").lower()==priority.lower()]
+    return {"total":len(tickets),"tickets":tickets}
+
+@app.get("/tickets/{ticket_id}")
+def get_ticket(ticket_id:str):
+    for t in load_tickets():
+        if t["id"]==ticket_id: return t
+    raise HTTPException(status_code=404,detail="Ticket not found")
+
+@app.get("/stats")
+def get_stats():
+    tickets=load_tickets()
+    cats,pris={},{}
+    for t in tickets:
+        c,p=t.get("category","?"),t.get("priority","?")
+        cats[c]=cats.get(c,0)+1
+        pris[p]=pris.get(p,0)+1
+    return {"total":len(tickets),"by_category":cats,"by_priority":pris}
