@@ -1,0 +1,86 @@
+[
+  {
+    "subject": "Laptop won't power on",
+    "description": "My laptop screen stays completely black and the power button LED doesn't light up at all. I left it plugged in overnight and it still does not turn on. I need it for a client demo in 2 hours.",
+    "category": "Hardware",
+    "subcategory": "Laptop/Desktop Failure",
+    "priority": "Critical"
+  },
+  {
+    "subject": "Request for a second monitor",
+    "description": "I would like to request an additional external monitor for my desk to improve productivity when working with multiple windows. No urgency, whenever it's convenient.",
+    "category": "Hardware",
+    "subcategory": "Equipment Request",
+    "priority": "Low"
+  },
+  {
+    "subject": "Outlook keeps crashing on launch",
+    "description": "Every time I open Outlook on my Windows laptop it freezes for 10 seconds and then closes itself. This started after this morning's Windows update. I have restarted twice but the issue persists.",
+    "category": "Software",
+    "subcategory": "Application Crash",
+    "priority": "High"
+  },
+  {
+    "subject": "Need Adobe Photoshop installed",
+    "description": "Could someone please install Adobe Photoshop on my workstation? I need it for some design work next week, no immediate deadline.",
+    "category": "Software",
+    "subcategory": "Software Installation Request",
+    "priority": "Low"
+  },
+  {
+    "subject": "Cannot connect to office VPN",
+    "description": "Since this morning I keep getting an authentication error when trying to connect to the corporate VPN from home. I have tried restarting my laptop twice. I cannot access any internal systems and have a deadline today.",
+    "category": "Network",
+    "subcategory": "VPN Access",
+    "priority": "High"
+  },
+  {
+    "subject": "Wi-Fi very slow on 4th floor",
+    "description": "The Wi-Fi connection on the 4th floor near the east wing has been extremely slow for the past hour, pages take over a minute to load. Multiple colleagues nearby are affected.",
+    "category": "Network",
+    "subcategory": "Connectivity / Performance",
+    "priority": "Medium"
+  },
+  {
+    "subject": "Locked out of company email",
+    "description": "I forgot my email password and after 3 failed attempts my account is now locked. I need access urgently to respond to a client before noon today.",
+    "category": "Account & Access",
+    "subcategory": "Account Lockout",
+    "priority": "High"
+  },
+  {
+    "subject": "Need access to shared finance drive",
+    "description": "I recently joined the finance team and need read/write access to the shared 'Finance-Reports' network drive. My manager has already approved this over email.",
+    "category": "Account & Access",
+    "subcategory": "Access Provisioning",
+    "priority": "Medium"
+  },
+  {
+    "subject": "Office printer on 2nd floor showing paper jam",
+    "description": "The HP printer near the 2nd floor pantry shows a paper jam error but there is no visible paper stuck inside. We are unable to print anything from that printer.",
+    "category": "Printing",
+    "subcategory": "Printer Hardware Issue",
+    "priority": "Medium"
+  },
+  {
+    "subject": "How do I set up email signature?",
+    "description": "Could someone share the steps or template to set up the standard company email signature in Outlook? Not urgent, just need it for reference.",
+    "category": "Software",
+    "subcategory": "How-To / Information Request",
+    "priority": "Low"
+  },
+  {
+    "subject": "Production database is down",
+    "description": "Our main production database server is not responding to any connections since 10 minutes ago. The customer-facing application is completely down and we are getting alerts from monitoring. This needs immediate attention.",
+    "category": "Infrastructure",
+    "subcategory": "Server / Database Outage",
+    "priority": "Critical"
+  },
+  {
+    "subject": "Password reset for new joiner",
+    "description": "New employee starting Monday needs their initial account password reset and a temporary password issued so they can log in on their first day.",
+    "category": "Account & Access",
+    "subcategory": "Password Reset",
+    "priority": "Medium"
+  }
+]

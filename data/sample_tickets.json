@@ -1,0 +1,38 @@
+[
+  {
+    "ticket_id": "TCK-3001",
+    "subject": "Cannot login to VPN",
+    "description": "I'm unable to connect to the corporate VPN since this morning. Getting an authentication error every time. I have a client call in an hour and need access to internal tools.",
+    "requester": "rohan.mehta@example.com"
+  },
+  {
+    "ticket_id": "TCK-3002",
+    "subject": "Request for noise-cancelling headphones",
+    "description": "I'd like to request a pair of noise-cancelling headphones for my desk for focus work. No rush, whenever stock is available.",
+    "requester": "priya.nair@example.com"
+  },
+  {
+    "ticket_id": "TCK-3003",
+    "subject": "Excel crashes when opening large file",
+    "description": "Microsoft Excel crashes every time I try to open a 50MB sales report file. It worked fine last week. I need this file for a presentation tomorrow morning.",
+    "requester": "arjun.singh@example.com"
+  },
+  {
+    "ticket_id": "TCK-3004",
+    "subject": "Need access to HR shared folder",
+    "description": "I joined the HR team last week and still don't have access to the 'HR-Policies' shared drive. My manager approved this via email on Monday.",
+    "requester": "sneha.kapoor@example.com"
+  },
+  {
+    "ticket_id": "TCK-3005",
+    "subject": "Main API gateway returning 500 errors",
+    "description": "Our production API gateway has started returning 500 errors for all requests in the last 5 minutes. Customers are reporting the mobile app is completely unusable. This is affecting all users.",
+    "requester": "ops-oncall@example.com"
+  },
+  {
+    "ticket_id": "TCK-3006",
+    "subject": "Printer on 3rd floor out of toner",
+    "description": "The Canon printer near the 3rd floor meeting rooms is showing a 'low toner' warning. Not urgent, but would be good to replace before it runs out completely.",
+    "requester": "vikram.rao@example.com"
+  }
+]

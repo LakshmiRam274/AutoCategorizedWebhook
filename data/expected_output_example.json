@@ -1,0 +1,16 @@
+[
+  {
+    "_note": "This file shows the EXPECTED SHAPE of a /classify response for the first sample ticket (TCK-3001). Actual category/subcategory/priority/confidence/reasoning values may vary slightly depending on the LLM provider and model used. Run `python scripts/generate_sample_outputs.py` after starting the server to generate real outputs for all sample tickets into sample_outputs.json.",
+    "ticket_id": "TCK-3001",
+    "subject": "Cannot login to VPN",
+    "description": "I'm unable to connect to the corporate VPN since this morning. Getting an authentication error every time. I have a client call in an hour and need access to internal tools.",
+    "requester": "rohan.mehta@example.com",
+    "metadata": null,
+    "category": "Network",
+    "subcategory": "VPN Access",
+    "priority": "High",
+    "confidence": 0.93,
+    "reasoning": "The ticket describes a VPN authentication failure that is blocking access to internal tools ahead of a time-sensitive client call.",
+    "model_used": "llama-3.1-8b-instant"
+  }
+]
