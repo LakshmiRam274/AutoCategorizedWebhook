@@ -8,7 +8,7 @@ enriched with that classification. Every prediction is logged for monitoring.
 Built for the Infinite Computer Solutions AI Prototype Challenge — Team 07
 (SD-02, Service Desk: Auto-Categorization Webhook).
 demo video link :https://drive.google.com/file/d/1bJw2kbHAaiYCyywTFbBgrixkIFNnKRj4/view?usp=drivesdk
-
+Live app Link :  https://autocategorizedwebhook.onrender.com/docs
 ---
 
 ## 1. Architecture Overview
